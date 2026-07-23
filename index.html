@@ -276,6 +276,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .steps-section{overflow:hidden;background:
   radial-gradient(42% 48% at 87% 46%,rgba(142,124,255,.18),transparent 70%),
   radial-gradient(35% 35% at 12% 16%,rgba(195,59,232,.08),transparent 72%)}
+.steps-section .h2 em{background:none;color:var(--purple-dark);-webkit-text-fill-color:currentColor}
 .steps-stage{margin-top:58px;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.82fr);gap:72px;align-items:center}
 .steps-list{display:grid;gap:18px;position:relative}
 .steps-list::before{content:"";position:absolute;left:18px;top:58px;bottom:58px;width:1px;
@@ -316,7 +317,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   background-color:#f5f2fa;background-image:radial-gradient(rgba(108,25,222,.045) 1px,transparent 1px);background-size:17px 17px}
 .setup-msg{display:flex;gap:7px;align-items:flex-end;opacity:0;transform:translateY(10px) scale(.98);animation:setupMsgIn .42s var(--ease) forwards}
 .setup-msg.user{justify-content:flex-end}.setup-msg.bot{justify-content:flex-start}
-.setup-msg .msg-avatar{width:25px;height:25px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 2px 8px rgba(24,16,64,.12)}
+.setup-msg .msg-avatar,.setup-typing .msg-avatar{width:25px;height:25px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 2px 8px rgba(24,16,64,.12)}
 .setup-bubble{max-width:78%;padding:9px 11px 6px;border-radius:13px;font-size:11.5px;line-height:1.42;box-shadow:0 4px 14px rgba(24,16,64,.07)}
 .setup-msg.bot .setup-bubble{background:#fff;color:var(--ink);border-bottom-left-radius:4px}
 .setup-msg.user .setup-bubble{background:linear-gradient(135deg,#7864ef,#9a70ff);color:#fff;border-bottom-right-radius:4px;order:-1}
