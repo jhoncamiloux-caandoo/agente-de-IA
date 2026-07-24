@@ -1368,7 +1368,10 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   }
 
   var demoEl=document.getElementById('demoChat'), demoBtn=document.getElementById('startDemo'), demoIdle=document.getElementById('demoIdle');
-  if(demoEl&&demoBtn){ var dr=new Runner(demoEl); demoBtn.addEventListener('click', function(){ if(demoIdle)demoIdle.style.display='none'; dr.run(demoScript,false); }); }
+  var waUrl='https://api.whatsapp.com/send?phone=5548996789080&text=Olá!%20Quero%20criar%20meu%20agente%20de%20IA%20para%20vender%20no%20WhatsApp.%20Pode%20me%20mostrar%20como%20funciona%3F';
+  if(demoBtn){ demoBtn.addEventListener('click', function(){ window.open(waUrl, '_blank'); }); }
+  var phoneWrap=document.querySelector('.phone-wrap');
+  if(phoneWrap){ phoneWrap.style.cursor='pointer'; phoneWrap.addEventListener('click', function(){ window.open(waUrl, '_blank'); }); }
 
   /* vídeo do hero: pausa se o usuário prefere menos movimento */
   var heroVideo = document.querySelector('.hero-video');
