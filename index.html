@@ -402,7 +402,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .mini-row .k svg{width:14px;height:14px;fill:none;stroke:#062b18;stroke-width:2.6}
 
 /* ---------- BENEFÍCIOS (visual à esquerda / lista à direita) ---------- */
-.benefits{margin-top:56px;display:grid;grid-template-columns:.92fr 1.08fr;gap:40px;align-items:center}
+.benefits{margin-top:56px;display:grid;grid-template-columns:.92fr 1.08fr;gap:40px;align-items:start}
 .ben-list{display:grid;gap:14px;position:relative}
 .ben-list::before{content:"";position:absolute;left:33px;top:34px;bottom:34px;width:2px;z-index:0;
   background:linear-gradient(var(--purple),rgba(142,124,255,.12))}
@@ -411,10 +411,10 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .ben .ic{box-shadow:0 0 0 6px var(--bg)}
 .ben h3{font-size:18px;margin-bottom:7px}
 .ben p{font-size:14px;color:var(--ink-2);line-height:1.55}
-.ben-visual{border-radius:24px;position:relative;background:var(--grad-dark);border:1px solid rgba(255,255,255,.1);padding:28px;display:flex;flex-direction:column;box-shadow:var(--shadow-lg)}
+.ben-visual{border-radius:24px;position:relative;background:var(--grad-dark);border:1px solid rgba(255,255,255,.1);padding:28px;display:flex;flex-direction:column;box-shadow:var(--shadow-lg);max-width:400px;margin:0 auto}
 .ben-visual .cap{color:#fff;font-weight:600;font-size:16px;margin-bottom:4px;position:relative;z-index:2}
 .ben-visual .sub{color:rgba(255,255,255,.62);font-size:13px;margin-bottom:20px;position:relative;z-index:2}
-.shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow-lg);flex:1;background:#fff;z-index:1}
+.shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow-lg);height:340px;background:#fff;z-index:1}
 .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .ben-badge{position:absolute;z-index:3;display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:14px;
   background:linear-gradient(135deg,#2E1A73,#1B1450);border:1px solid rgba(255,255,255,.16);
