@@ -349,13 +349,17 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   font-size:11px;font-weight:600;color:var(--ink)}
 .setup-status-icons{font-size:10px;letter-spacing:1px}
 .setup-head{height:70px;padding:10px 16px;display:flex;align-items:center;gap:11px;background:#fff;border-bottom:1px solid var(--line)}
-.setup-back{font-size:25px;color:var(--purple-deeper);line-height:1}
+.setup-icon-btn{width:17px;height:17px;flex:none;color:var(--ink-3);opacity:.8}
+.setup-icon-btn svg{width:100%;height:100%;display:block}
 .setup-head .avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #eee9ff}
-.setup-head-text{flex:1}.setup-head-text b{display:block;font-size:14px}.setup-head-text small{display:flex;align-items:center;gap:5px;color:#79a68b;font-size:10px}
-.setup-head-text small::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--wa)}
-.setup-menu{font-size:23px;color:var(--purple-deeper);letter-spacing:2px}
-.setup-chat{flex:1;overflow:hidden;padding:16px 12px 18px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;
+.setup-head-text{flex:1;min-width:0}.setup-head-text b{display:block;font-size:14px}.setup-head-text small{display:block;color:var(--ink-3);font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.setup-head-actions{display:flex;align-items:center;gap:13px;margin-left:auto}
+.setup-chat{flex:1;overflow:hidden;padding:16px 12px 18px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;position:relative;
   background-color:#f5f2fa;background-image:radial-gradient(rgba(108,25,222,.045) 1px,transparent 1px);background-size:17px 17px}
+.setup-idle{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;padding:0 20px}
+.setup-idle-logo{width:56px;height:56px;border-radius:50%;overflow:hidden;box-shadow:0 8px 24px rgba(108,25,222,.22)}
+.setup-idle-logo img{width:100%;height:100%;object-fit:cover}
+.setup-idle p{font-size:13px;line-height:1.5;color:var(--ink-2);max-width:240px}
 .setup-msg{display:flex;gap:7px;align-items:flex-end;opacity:0;transform:translateY(10px) scale(.98);animation:setupMsgIn .42s var(--ease) forwards}
 .setup-msg.user{justify-content:flex-end}.setup-msg.bot{justify-content:flex-start}
 .setup-msg .msg-avatar,.setup-typing .msg-avatar{width:25px;height:25px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 2px 8px rgba(24,16,64,.12)}
@@ -598,7 +602,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 
       <div data-reveal class="hero-copy">
         <span class="eyebrow"><span class="d"></span> IA no WhatsApp · Clint</span>
-        <h1 class="display">Seu <b class="pw">agente de IA</b> vendendo no <b class="pw">WhatsApp</b> em 5 minutos. <img class="wa-inline" src="Images/whatsapp-verified.svg" alt=""></h1>
+        <h1 class="display">Seu <b class="pw">agente de IA</b> vendendo no <b class="pw">WhatsApp</b> em 5 minutos<img class="wa-inline" src="Images/whatsapp-verified.svg" alt=""></h1>
         <p class="lead">Sem código, sem esperar semanas. Você descreve seu negócio, a Clint cria o agente e ele já começa a atender, qualificar, agendar e vender.</p>
         <div class="hero-cta">
           <a class="btn btn-wa btn-xl" href="https://api.whatsapp.com/send?phone=5548996789080&amp;text=Ol%C3%A1!%20Quero%20criar%20meu%20agente%20de%20IA%20para%20vender%20no%20WhatsApp.%20Pode%20me%20mostrar%20como%20funciona%3F" target="_blank" rel="noopener">
@@ -666,12 +670,22 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
         <div class="setup-phone-wrap" data-reveal>
           <div class="setup-phone">
             <div class="setup-screen">
-              <div class="setup-status"><span>10:30</span><span class="setup-status-icons">▮▮⌁ ▰</span></div>
+              <div class="setup-status"><span>10:30</span></div>
               <div class="setup-head">
-                <span class="setup-back">‹</span><img class="avatar" src="Images/ia-clint.webp" alt="Clint IA">
-                <div class="setup-head-text"><b>Clint IA</b><small>online</small></div><span class="setup-menu">⋮</span>
+                <img class="avatar" src="Images/ia-clint.webp" alt="IA da Clint">
+                <div class="setup-head-text"><b>IA da Clint</b><small>Sua copilota de negócios</small></div>
+                <div class="setup-head-actions">
+                  <span class="setup-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg></span>
+                  <span class="setup-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M16 3h3a2 2 0 0 1 2 2v3"></path><path d="M21 16v3a2 2 0 0 1-2 2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path></svg></span>
+                  <span class="setup-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="M6 6l12 12"></path></svg></span>
+                </div>
               </div>
-              <div class="setup-chat" id="setupChat" aria-live="polite"></div>
+              <div class="setup-chat" id="setupChat" aria-live="polite">
+                <div class="setup-idle" id="setupIdle">
+                  <span class="setup-idle-logo"><img src="Images/ia-clint.webp" alt=""></span>
+                  <p>Olá! Sou a IA da Clint. Como posso ajudar no seu negócio hoje?</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -759,7 +773,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
     <div class="container demo-grid">
       <div data-reveal>
         <span class="eyebrow">Demonstração ao vivo</span>
-        <h2 class="h2" data-word-reveal style="margin-top:16px;max-width:18ch">Não acredita que é <em>rápido assim?</em> Teste agora.</h2>
+        <h2 class="h2" data-word-reveal style="margin-top:16px;max-width:18ch">Não acredita que é <em>rápido assim?</em> Teste agora</h2>
         <p class="lead" style="margin-top:18px;max-width:44ch">Mande uma mensagem para o agente da Clint e veja como ele responde. É exatamente o que o seu vai fazer com seus clientes.</p>
         <button type="button" id="startDemo" class="btn btn-wa btn-xl" style="margin-top:30px">
           <svg viewBox="0 0 24 24" fill="none" stroke="#08351F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14l11-11"></path><path d="M21 3l-6.5 18a.55.55 0 0 1-1 0l-3.5-7l-7-3.5a.55.55 0 0 1 0-1l18-6.5"></path></svg>
@@ -1227,7 +1241,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
         <div class="grid-tex" aria-hidden="true"></div>
         <div class="blob" style="width:360px;height:360px;background:radial-gradient(circle,rgba(142,124,255,.4),transparent 65%);top:-140px;left:-80px"></div>
         <div class="blob b2" style="width:320px;height:320px;background:radial-gradient(circle,rgba(195,59,232,.35),transparent 65%);bottom:-140px;right:-60px"></div>
-        <h2 data-word-reveal><span class="muted">Seu concorrente ainda está montando fluxograma.</span><span class="pop">Você pode estar vendendo em 5 minutos.</span></h2>
+        <h2 data-word-reveal><span class="muted">Seu concorrente ainda está montando fluxograma.</span><span class="pop">Você pode estar vendendo em 5 minutos</span></h2>
         <div class="actions">
           <span class="cta-btn-wrap">
             <a class="btn btn-wa btn-xl" href="https://api.whatsapp.com/send?phone=5548996789080&amp;text=Ol%C3%A1!%20Quero%20criar%20meu%20agente%20de%20IA%20para%20vender%20no%20WhatsApp.%20Pode%20me%20mostrar%20como%20funciona%3F" target="_blank" rel="noopener">
@@ -1360,7 +1374,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
     setupTimers.push(setTimeout(runSetup,delay));
   }
   if(setupEl&&setupSection){
-    if(reduce){setupScript.forEach(function(m){setupEl.appendChild(setupBubble(m));});activateStep(3);}
+    if(reduce){setupEl.innerHTML='';setupScript.forEach(function(m){setupEl.appendChild(setupBubble(m));});activateStep(3);}
     else if('IntersectionObserver' in window){
       var setupIO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting&&!setupStarted){setupStarted=true;runSetup();setupIO.unobserve(setupSection);}});},{threshold:.22});
       setupIO.observe(setupSection);
