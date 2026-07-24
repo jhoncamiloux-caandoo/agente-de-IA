@@ -1560,6 +1560,24 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
     window.addEventListener('resize', wrUpdate);
     wrUpdate();
   }
+
+  /* Informa a altura real da página ao site pai (WordPress) quando embutida em iframe,
+     para que o iframe se redimensione e o scroll aconteça na página, não dentro dele. */
+  if (window.parent && window.parent !== window) {
+    var lastSentHeight = 0;
+    function sendHeight(){
+      var h = document.documentElement.scrollHeight;
+      if (h !== lastSentHeight) {
+        lastSentHeight = h;
+        window.parent.postMessage({ type: 'clint-lp-resize', height: h }, '*');
+      }
+    }
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+    new ResizeObserver(sendHeight).observe(document.body);
+    setInterval(sendHeight, 1000);
+    sendHeight();
+  }
 })();
 </script>
 
