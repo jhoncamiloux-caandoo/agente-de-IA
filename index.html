@@ -86,7 +86,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   letter-spacing:.14em;text-transform:uppercase;color:var(--purple-dark);font-weight:500}
 .eyebrow .d{width:7px;height:7px;border-radius:50%;background:var(--purple);animation:pulse 2s infinite}
 .display{font-size:clamp(38px,5.6vw,62px);line-height:1.1;letter-spacing:-.035em;font-weight:700}
-.display em,.h2 em{font-style:italic;font-weight:700;background:linear-gradient(100deg,var(--purple-dark),var(--purple));
+.display em,.h2 em{font-style:italic;font-weight:700;color:var(--purple-dark);background:linear-gradient(100deg,var(--purple-dark),var(--purple));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
   padding-right:.14em;margin-right:-.14em}
 .display b.pw,.h2 b.pw{font-style:normal;font-weight:700;color:var(--purple)}
@@ -497,7 +497,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   background:linear-gradient(135deg,#fff 0%,var(--purple-soft) 100%)}
 .quote .mk{width:38px;height:38px;fill:none;stroke:var(--purple);stroke-width:1.8;opacity:.7}
 .quote blockquote{margin:18px 0 26px;font-size:clamp(20px,2.2vw,27px);line-height:1.4;font-weight:600;letter-spacing:-.015em;color:var(--ink)}
-.quote .hl{background:linear-gradient(100deg,var(--purple-dark),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.quote .hl{color:var(--purple-dark);background:linear-gradient(100deg,var(--purple-dark),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .quote figcaption{display:flex;align-items:center;gap:14px}
 .quote .av{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--line-2)}
 .quote .who .n{font-weight:600;color:var(--ink)}
@@ -524,9 +524,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .cta .blob.b2{animation-delay:-5.5s}
 .cta h2{position:relative;font-size:clamp(28px,3.7vw,44px);line-height:1.2;max-width:23ch;margin:0 auto;letter-spacing:-.03em}
 .cta h2 .muted{display:block;color:rgba(255,255,255,.6);font-weight:400}
-.cta h2 .pop{display:block;font-weight:800;font-style:italic;margin-top:6px;padding-right:.14em;
-  background:linear-gradient(100deg,#fff 8%,#C9BAFF 52%,#8FE3C7 100%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cta h2 .pop{display:block;font-weight:800;font-style:italic;margin-top:6px;color:#fff}
 .cta .actions{position:relative;margin-top:38px;display:flex;flex-direction:column;align-items:center;gap:16px}
 .cta .cta-btn-wrap{position:relative;display:inline-flex}
 .cta .cta-btn-wrap::before{content:"";position:absolute;inset:-13px;border-radius:999px;
@@ -860,7 +858,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
         <div class="section-head">
           <span class="eyebrow"><span class="d"></span>Onde tudo isso roda</span>
           <h2 class="h2" data-word-reveal>Tudo isso que você viu até aqui mora num lugar só: <em>o CRM da Clint</em></h2>
-          <p class="lead">Por isso, a IA nunca pergunta seu contexto: ela já enxerga tudo, atualizado minuto a minuto.</p>
+          <p class="lead">Não é só onde a IA atende. É onde o funil, os canais e as automações moram, no mesmo CRM.</p>
         </div>
 
         <div class="tool-tabs">
