@@ -86,7 +86,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   letter-spacing:.14em;text-transform:uppercase;color:var(--purple-dark);font-weight:500}
 .eyebrow .d{width:7px;height:7px;border-radius:50%;background:var(--purple);animation:pulse 2s infinite}
 .display{font-size:clamp(38px,5.6vw,62px);line-height:1.1;letter-spacing:-.035em;font-weight:700}
-.display em,.h2 em{font-style:italic;font-weight:700;background:linear-gradient(100deg,var(--purple-dark),var(--purple));
+.display em,.h2 em{font-style:italic;font-weight:700;color:var(--purple-dark);background:linear-gradient(100deg,var(--purple-dark),var(--purple));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
   padding-right:.14em;margin-right:-.14em}
 .display b.pw,.h2 b.pw{font-style:normal;font-weight:700;color:var(--purple)}
@@ -402,7 +402,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .mini-row .k svg{width:14px;height:14px;fill:none;stroke:#062b18;stroke-width:2.6}
 
 /* ---------- BENEFÍCIOS (visual à esquerda / lista à direita) ---------- */
-.benefits{margin-top:56px;display:grid;grid-template-columns:.92fr 1.08fr;gap:40px;align-items:center}
+.benefits{margin-top:56px;display:grid;grid-template-columns:.92fr 1.08fr;gap:40px;align-items:start}
 .ben-list{display:grid;gap:14px;position:relative}
 .ben-list::before{content:"";position:absolute;left:33px;top:34px;bottom:34px;width:2px;z-index:0;
   background:linear-gradient(var(--purple),rgba(142,124,255,.12))}
@@ -411,10 +411,10 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .ben .ic{box-shadow:0 0 0 6px var(--bg)}
 .ben h3{font-size:18px;margin-bottom:7px}
 .ben p{font-size:14px;color:var(--ink-2);line-height:1.55}
-.ben-visual{border-radius:24px;position:relative;background:var(--grad-dark);border:1px solid rgba(255,255,255,.1);padding:28px;display:flex;flex-direction:column;box-shadow:var(--shadow-lg)}
+.ben-visual{border-radius:24px;position:relative;background:var(--grad-dark);border:1px solid rgba(255,255,255,.1);padding:28px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:var(--shadow-lg);max-width:380px;margin:0 auto}
 .ben-visual .cap{color:#fff;font-weight:600;font-size:16px;margin-bottom:4px;position:relative;z-index:2}
-.ben-visual .sub{color:rgba(255,255,255,.62);font-size:13px;margin-bottom:20px;position:relative;z-index:2}
-.shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow-lg);flex:1;background:#fff;z-index:1}
+.ben-visual .sub{color:rgba(255,255,255,.62);font-size:13px;margin-bottom:20px;position:relative;z-index:2;max-width:30ch}
+.shot{position:relative;width:198px;aspect-ratio:666/1442;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow-lg);background:#fff;z-index:1}
 .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .ben-badge{position:absolute;z-index:3;display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:14px;
   background:linear-gradient(135deg,#2E1A73,#1B1450);border:1px solid rgba(255,255,255,.16);
@@ -497,7 +497,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   background:linear-gradient(135deg,#fff 0%,var(--purple-soft) 100%)}
 .quote .mk{width:38px;height:38px;fill:none;stroke:var(--purple);stroke-width:1.8;opacity:.7}
 .quote blockquote{margin:18px 0 26px;font-size:clamp(20px,2.2vw,27px);line-height:1.4;font-weight:600;letter-spacing:-.015em;color:var(--ink)}
-.quote .hl{background:linear-gradient(100deg,var(--purple-dark),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.quote .hl{color:var(--purple-dark);background:linear-gradient(100deg,var(--purple-dark),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .quote figcaption{display:flex;align-items:center;gap:14px}
 .quote .av{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--line-2)}
 .quote .who .n{font-weight:600;color:var(--ink)}
@@ -524,9 +524,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .cta .blob.b2{animation-delay:-5.5s}
 .cta h2{position:relative;font-size:clamp(28px,3.7vw,44px);line-height:1.2;max-width:23ch;margin:0 auto;letter-spacing:-.03em}
 .cta h2 .muted{display:block;color:rgba(255,255,255,.6);font-weight:400}
-.cta h2 .pop{display:block;font-weight:800;font-style:italic;margin-top:6px;padding-right:.14em;
-  background:linear-gradient(100deg,#fff 8%,#C9BAFF 52%,#8FE3C7 100%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cta h2 .pop{display:block;font-weight:800;font-style:italic;margin-top:6px;color:#fff}
 .cta .actions{position:relative;margin-top:38px;display:flex;flex-direction:column;align-items:center;gap:16px}
 .cta .cta-btn-wrap{position:relative;display:inline-flex}
 .cta .cta-btn-wrap::before{content:"";position:absolute;inset:-13px;border-radius:999px;
@@ -860,7 +858,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
         <div class="section-head">
           <span class="eyebrow"><span class="d"></span>Onde tudo isso roda</span>
           <h2 class="h2" data-word-reveal>Tudo isso que você viu até aqui mora num lugar só: <em>o CRM da Clint</em></h2>
-          <p class="lead">Por isso, a IA nunca pergunta seu contexto: ela já enxerga tudo, atualizado minuto a minuto.</p>
+          <p class="lead">Não é só onde a IA atende. É onde o funil, os canais e as automações moram, no mesmo CRM.</p>
         </div>
 
         <div class="tool-tabs">
@@ -1561,6 +1559,24 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
     window.addEventListener('scroll', function(){ if (!wrTicking) { requestAnimationFrame(wrUpdate); wrTicking = true; } }, {passive:true});
     window.addEventListener('resize', wrUpdate);
     wrUpdate();
+  }
+
+  /* Informa a altura real da página ao site pai (WordPress) quando embutida em iframe,
+     para que o iframe se redimensione e o scroll aconteça na página, não dentro dele. */
+  if (window.parent && window.parent !== window) {
+    var lastSentHeight = 0;
+    function sendHeight(){
+      var h = document.documentElement.scrollHeight;
+      if (h !== lastSentHeight) {
+        lastSentHeight = h;
+        window.parent.postMessage({ type: 'clint-lp-resize', height: h }, '*');
+      }
+    }
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+    new ResizeObserver(sendHeight).observe(document.body);
+    setInterval(sendHeight, 1000);
+    sendHeight();
   }
 })();
 </script>
