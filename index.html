@@ -162,7 +162,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
 .nav .logo{height:26px}
 .nav-brand{display:flex;align-items:center;gap:16px}
-.nav-brand .meta-pill{height:30px;width:auto}
+.nav-brand .meta-pill{height:42px;width:auto}
 
 /* ---------- HERO ---------- */
 .hero{padding:58px 0 0;overflow:hidden;background:#fff}
@@ -265,20 +265,20 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .phone-wrap{position:relative;display:flex;justify-content:center;isolation:isolate}
 .phone{position:relative;z-index:2;width:348px;max-width:100%;border-radius:46px;padding:12px;
   background:linear-gradient(160deg,#241663,#140F33);box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.12)}
-.phone-screen{position:relative;border-radius:36px;overflow:hidden;background:#0E1512;height:566px;display:flex;flex-direction:column}
+.phone-screen{position:relative;border-radius:36px;overflow:hidden;background:#F4F1EC;height:566px;display:flex;flex-direction:column}
 .phone-notch{position:absolute;top:4px;left:50%;translate:-50% 0;width:90px;height:5px;border-radius:999px;background:#000;z-index:6;opacity:.85}
-.wa-head{display:flex;align-items:center;gap:11px;padding:16px 15px 13px;background:linear-gradient(180deg,#075E54,#0B7A5F);color:#fff}
+.wa-head{display:flex;align-items:center;gap:11px;padding:16px 15px 13px;background:#fff;color:var(--ink);border-bottom:1px solid var(--line)}
 .wa-head .av{position:relative;width:40px;height:40px;border-radius:50%;background:var(--grad-ai);display:grid;place-items:center}
 .wa-head .av svg{width:22px;height:22px;fill:#fff}
-.wa-head .nm{font-size:14px;font-weight:600;display:flex;align-items:center;gap:5px}
+.wa-head .nm{font-size:14px;font-weight:600;display:flex;align-items:center;gap:5px;color:var(--ink)}
 .wa-head .nm .vf{width:15px;height:15px}
-.wa-head .st{font-size:11px;color:#BEEFD2;margin-top:1px}
-.wa-head .actions{margin-left:auto;display:flex;gap:15px;opacity:.85}
-.wa-head .actions svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2}
+.wa-head .st{font-size:11px;color:var(--wa-ink);margin-top:1px}
+.wa-head .actions{margin-left:auto;display:flex;gap:15px;opacity:.7}
+.wa-head .actions svg{width:18px;height:18px;fill:none;stroke:var(--ink-2);stroke-width:2}
 .wa-body{position:relative;flex:1;overflow:hidden;padding:16px 13px;display:flex;flex-direction:column;gap:9px;
-  background:#0B1410;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:18px 18px}
-.wa-foot{display:flex;align-items:center;gap:9px;padding:11px 13px;background:#0E1512;border-top:1px solid rgba(255,255,255,.06)}
-.wa-foot .fld{flex:1;height:38px;border-radius:19px;background:rgba(255,255,255,.08);display:flex;align-items:center;padding:0 14px;font-size:13px;color:#8FA99B}
+  background:#EFEAE2;background-image:radial-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:18px 18px}
+.wa-foot{display:flex;align-items:center;gap:9px;padding:11px 13px;background:#fff;border-top:1px solid var(--line)}
+.wa-foot .fld{flex:1;height:38px;border-radius:19px;background:var(--bg-2);display:flex;align-items:center;padding:0 14px;font-size:13px;color:var(--ink-3)}
 .wa-foot .snd{width:38px;height:38px;border-radius:50%;background:var(--wa);display:grid;place-items:center}
 .wa-foot .snd svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2}
 
@@ -287,16 +287,16 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 .msg.lead{justify-content:flex-start}
 .msg.agent{justify-content:flex-end}
 .bub{max-width:80%;padding:9px 12px;font-size:13px;line-height:1.42;position:relative}
-.msg.lead .bub{background:#fff;color:#12211A;border-radius:14px 14px 14px 4px}
+.msg.lead .bub{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm);border-radius:14px 14px 14px 4px}
 .msg.agent .bub{background:linear-gradient(180deg,#25D366,#12B36A);color:#062b18;border-radius:14px 14px 4px 14px;
   display:flex;gap:8px;align-items:flex-start;font-weight:500}
 .bub .tm{display:block;font-size:9.5px;opacity:.6;margin-top:3px;text-align:right}
-.typing{display:inline-flex;gap:4px;padding:12px 14px;background:#fff;border-radius:14px 14px 14px 4px}
+.typing{display:inline-flex;gap:4px;padding:12px 14px;background:#fff;box-shadow:var(--shadow-sm);border-radius:14px 14px 14px 4px}
 .typing span{width:6px;height:6px;border-radius:50%;background:#9aa;animation:dots 1.2s infinite}
 .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
-.wa-idle{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px;background:#0B1410}
-.wa-idle p{font-size:13px;color:#8FA99B;max-width:23ch}
-.wa-idle .ic{background:rgba(37,211,102,.14);color:#5FE39B;width:56px;height:56px;border-radius:50%}
+.wa-idle{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px;background:#EFEAE2}
+.wa-idle p{font-size:13px;color:var(--ink-3);max-width:23ch}
+.wa-idle .ic{background:var(--wa-soft);color:var(--wa-ink);width:56px;height:56px;border-radius:50%}
 
 /* Selo WhatsApp verificado */
 .wa-badge{flex:none;position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;
@@ -602,7 +602,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   .footer-in{flex-direction:column;align-items:flex-start;gap:22px}
   .phone{width:100%;max-width:330px}
   .duo{flex-direction:column}.duo .plus{margin:-14px 0}
-  .nav-brand{gap:10px}.nav-brand .meta-pill{height:24px}
+  .nav-brand{gap:10px}.nav-brand .meta-pill{height:32px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
