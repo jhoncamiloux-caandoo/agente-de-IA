@@ -165,8 +165,10 @@ body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opa
 
 /* ---------- LAYOUT ---------- */
 .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.section{padding:100px 0;position:relative}
+.section{padding:100px 0;position:relative;overflow-x:hidden}
 .section.tight{padding:72px 0}
+/* #tipos usa position:sticky nos cards do bento — overflow-x:hidden aqui quebraria o sticky, então mantém visible */
+#tipos{overflow-x:visible}
 .glow{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
 .glow.p{background:radial-gradient(circle,rgba(142,124,255,.35),transparent 68%)}
 .glow.g{background:radial-gradient(circle,rgba(63,201,196,.32),transparent 68%)}
