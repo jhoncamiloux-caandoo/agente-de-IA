@@ -6,6 +6,41 @@
 <title>Clint · Seu agente de IA vendendo no WhatsApp em 5 minutos</title>
 <meta name="description" content="Sem código, sem esperar semanas. Você descreve seu negócio, a Clint cria o agente e ele já começa a atender, qualificar, agendar e vender.">
 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MG6T9T');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) - GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2HY4LSE0P2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2HY4LSE0P2');
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '427686280751612');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=427686280751612&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -610,6 +645,10 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
 </head>
 
 <body id="top">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG6T9T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ===================== NAV ===================== -->
 <header class="nav">
@@ -1386,6 +1425,53 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 
+  /* ---------- UTM: captura, persistência e atribuição no WhatsApp ---------- */
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+  var utm = {};
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var hasUtm = false;
+    UTM_KEYS.forEach(function(k){ var v = params.get(k); if (v) { utm[k] = v; hasUtm = true; } });
+    if (hasUtm) {
+      try { localStorage.setItem('clint_utm', JSON.stringify(utm)); } catch(e){}
+    } else {
+      try {
+        var stored = localStorage.getItem('clint_utm');
+        if (stored) utm = JSON.parse(stored);
+      } catch(e){}
+    }
+    window.dataLayer = window.dataLayer || [];
+    if (Object.keys(utm).length) {
+      window.dataLayer.push(Object.assign({event:'utm_capture'}, utm));
+    }
+  })();
+
+  function withUtmRef(url){
+    if (!utm.utm_source && !utm.utm_campaign && !utm.utm_medium) return url;
+    try {
+      var u = new URL(url);
+      var text = u.searchParams.get('text') || '';
+      var refParts = [];
+      if (utm.utm_source) refParts.push(utm.utm_source);
+      if (utm.utm_medium) refParts.push(utm.utm_medium);
+      if (utm.utm_campaign) refParts.push(utm.utm_campaign);
+      u.searchParams.set('text', text + '\n\n[ref: ' + refParts.join('/') + ']');
+      return u.toString();
+    } catch(e){ return url; }
+  }
+
+  function trackWhatsAppClick(){
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event:'whatsapp_click', utm_source:utm.utm_source||'', utm_medium:utm.utm_medium||'', utm_campaign:utm.utm_campaign||''});
+    if (typeof gtag === 'function') gtag('event','generate_lead',{method:'whatsapp'});
+    if (typeof fbq === 'function') fbq('track','Lead');
+  }
+
+  [].slice.call(document.querySelectorAll('a[href*="api.whatsapp.com/send"]')).forEach(function(a){
+    a.href = withUtmRef(a.href);
+    a.addEventListener('click', trackWhatsAppClick);
+  });
+
   /* reveal on scroll */
   var reveals = [].slice.call(document.querySelectorAll('[data-reveal]'));
   if (reduce || !('IntersectionObserver' in window)) { reveals.forEach(function(e){e.classList.add('in')}); }
@@ -1473,10 +1559,10 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   }
 
   var demoEl=document.getElementById('demoChat'), demoBtn=document.getElementById('startDemo'), demoIdle=document.getElementById('demoIdle');
-  var waUrl='https://api.whatsapp.com/send?phone=5548996789080&text=Olá!%20Quero%20criar%20meu%20agente%20de%20IA%20para%20vender%20no%20WhatsApp.%20Pode%20me%20mostrar%20como%20funciona%3F';
-  if(demoBtn){ demoBtn.addEventListener('click', function(){ window.open(waUrl, '_blank'); }); }
+  var waUrl=withUtmRef('https://api.whatsapp.com/send?phone=5548996789080&text=Olá!%20Quero%20criar%20meu%20agente%20de%20IA%20para%20vender%20no%20WhatsApp.%20Pode%20me%20mostrar%20como%20funciona%3F');
+  if(demoBtn){ demoBtn.addEventListener('click', function(){ trackWhatsAppClick(); window.open(waUrl, '_blank'); }); }
   var phoneWrap=document.querySelector('.phone-wrap');
-  if(phoneWrap){ phoneWrap.style.cursor='pointer'; phoneWrap.addEventListener('click', function(){ window.open(waUrl, '_blank'); }); }
+  if(phoneWrap){ phoneWrap.style.cursor='pointer'; phoneWrap.addEventListener('click', function(){ trackWhatsAppClick(); window.open(waUrl, '_blank'); }); }
 
   /* tabs de integrações (CRM) */
   var toolMap={funil:'tool-funil',insta:'tool-insta',api:'tool-api',sms:'tool-sms',auto:'tool-auto',ind:'tool-ind'};
