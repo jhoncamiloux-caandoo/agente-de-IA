@@ -699,10 +699,7 @@ h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em;line-height:1.08;font-weight
   .duo{flex-direction:column}.duo .plus{margin:-14px 0}
   .nav-brand{gap:10px}.nav-brand .meta-pill{height:32px}
 }
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
-  [data-reveal],.msg,.cbub,.quote .stars svg,.duo .who,.duo .plus,[data-word-reveal] .rw{opacity:1!important;transform:none!important;filter:none!important}
-}
+/* Animações forçadas para todos os visitantes, independente da preferência de "reduzir movimento" do sistema operacional. */
 </style>
 </head>
 
@@ -1484,7 +1481,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    ============================================================ */
 (function(){
   "use strict";
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = false; /* animações sempre ativas, ignora prefers-reduced-motion do SO */
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 
   /* ---------- UTM: captura, persistência e atribuição no WhatsApp ---------- */
